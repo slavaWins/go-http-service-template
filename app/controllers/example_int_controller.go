@@ -7,7 +7,7 @@ import (
 
 
 // Handler для корневого маршрута
-func IndexHandlerResult(r *http.Request) contracts.Response[int] {
+func ExampleIntHandler(r *http.Request) contracts.Response[int] {
   // val := 55;
 
    // response := contracts.Response[int]{Value: val}
