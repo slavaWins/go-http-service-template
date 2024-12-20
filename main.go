@@ -1,18 +1,14 @@
 package main
 
 import (
+    "demo/app"
     "demo/pkg/db_service"
     "demo/pkg/helpers"
-    "demo/domains/template_service"
     "net/http"
     "fmt"
     "github.com/joho/godotenv"
 )
 
-// Response структура для JSON-ответов
-type Response struct {
-    Message string `json:"message"`
-}
 
 
 func main() {
@@ -25,7 +21,8 @@ func main() {
 
     db_service.Connect();
 
-    template_service.Routes()
+
+    app.Routes();
 
 
 
