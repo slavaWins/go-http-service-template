@@ -24,7 +24,7 @@ func Env(key string) string {
     // Получаем значение переменной среды EXAMPLE_KEY
     exampleKey := os.Getenv(key)
     if exampleKey == "" {
-       log.Fatal("EXAMPLE_KEY не найден в переменных окружения")
+       log.Fatal(key + " не найден в переменных окружения")
     }
 
     // Печатаем значение переменной в консоль
