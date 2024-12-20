@@ -3,13 +3,18 @@ package main
 import (
     "demo/app"
     "demo/pkg/db_service"
+    "demo/pkg/controllers"
     "demo/pkg/helpers"
     "net/http"
     "fmt"
     "github.com/joho/godotenv"
+    "demo/pkg/middlewares"
 )
 
-
+func notFoundHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusNotFound)
+	fmt.Fprintf(w, "Ошибка 404: pidor Страница не найдена")
+}
 
 func main() {
     if err := godotenv.Load(); err != nil {
@@ -24,7 +29,7 @@ func main() {
 
     app.Routes();
 
-
+    http.HandleFunc("/",  middlewares.Wrapper(controllers.NotFoundHandler)  )
 
     fmt.Println("Started") // Вывод: Иван Иванов
 
