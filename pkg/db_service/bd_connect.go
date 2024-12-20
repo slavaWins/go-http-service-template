@@ -20,6 +20,9 @@ func init() {
 
     urlConnection := "{DB_USERNAME}:{DB_PASSWORD}@tcp({DB_HOST}:{DB_PORT})/{DB_DATABASE}?charset=utf8mb4&parseTime=True&loc=Local";
 
+
+   fmt.Println(os.Getenv("APP_NAME"));
+
    urlConnection = strings.Replace(urlConnection, "{DB_USERNAME}", os.Getenv("DB_USERNAME"), -1)
    urlConnection = strings.Replace(urlConnection, "{DB_PASSWORD}", os.Getenv("DB_PASSWORD")  , -1)
    urlConnection = strings.Replace(urlConnection, "{DB_HOST}", os.Getenv("DB_HOST"), -1)
@@ -31,7 +34,7 @@ func init() {
 	// Подключение к базе данных
 	db, err := gorm.Open(mysql.Open(urlConnection), &gorm.Config{})
 	if err != nil {
-		log.Fatalf("Не удалось подключиться к базе данных: %v", err)
+		log.Fatalf("Не удалось подключиться к BD данных: %v", err)
 	}
 
 	// Проверка подключения

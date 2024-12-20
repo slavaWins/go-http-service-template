@@ -23,8 +23,14 @@ main.go для запуска приложения
     go run struct.go --name=user
 
 
+## Запуск
 
 
+    go run main.go
+
+
+Демо роут будет находится по юрл
+ http://localhost:8080/api/template-service/v1/template
 
 ## Документация по фреймворку
 
@@ -33,6 +39,6 @@ main.go для запуска приложения
 
  
 
-
+ 
 
  
