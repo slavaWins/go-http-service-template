@@ -1,28 +1,30 @@
 package db_service
 
 import (
-    "demo/commons/helpers"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log"
 	"strings"
 	"os"
+    "github.com/joho/godotenv"
 )
 
 // Глобальная переменная для хранения объекта DB
+// TODO: приватной сделать
 var DB *gorm.DB
 
 // Инициализация базы данных
 func init() {
+    godotenv.Load();
 
     urlConnection := "{DB_USERNAME}:{DB_PASSWORD}@tcp({DB_HOST}:{DB_PORT})/{DB_DATABASE}?charset=utf8mb4&parseTime=True&loc=Local";
 
-   urlConnection = strings.Replace(urlConnection, "{DB_USERNAME}", helpers.Env("DB_USERNAME"), -1)
+   urlConnection = strings.Replace(urlConnection, "{DB_USERNAME}", os.Getenv("DB_USERNAME"), -1)
    urlConnection = strings.Replace(urlConnection, "{DB_PASSWORD}", os.Getenv("DB_PASSWORD")  , -1)
-   urlConnection = strings.Replace(urlConnection, "{DB_HOST}", helpers.Env("DB_HOST"), -1)
-   urlConnection = strings.Replace(urlConnection, "{DB_PORT}", helpers.Env("DB_PORT"), -1)
-   urlConnection = strings.Replace(urlConnection, "{DB_DATABASE}", helpers.Env("DB_DATABASE"), -1)
+   urlConnection = strings.Replace(urlConnection, "{DB_HOST}", os.Getenv("DB_HOST"), -1)
+   urlConnection = strings.Replace(urlConnection, "{DB_PORT}", os.Getenv("DB_PORT"), -1)
+   urlConnection = strings.Replace(urlConnection, "{DB_DATABASE}", os.Getenv("DB_DATABASE"), -1)
   // fmt.Println(urlConnection);
 
 
