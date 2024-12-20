@@ -3,12 +3,13 @@ package main
 import (
     "demo/app"
     "demo/pkg/db_service"
-    "demo/pkg/controllers"
+   // "demo/pkg/controllers"
     "demo/pkg/helpers"
     "net/http"
     "fmt"
     "github.com/joho/godotenv"
-    "demo/pkg/middlewares"
+   // "demo/pkg/middlewares"
+    "github.com/gorilla/mux"
 )
 
 func notFoundHandler(w http.ResponseWriter, r *http.Request) {
@@ -26,10 +27,12 @@ func main() {
 
     db_service.Connect();
 
+    routes := mux.NewRouter()
 
-    app.Routes();
+    app.Routes(routes);
 
-    http.HandleFunc("/",  middlewares.Wrapper(controllers.NotFoundHandler)  )
+    http.Handle("/", routes)
+    //http.HandleFunc("/",  middlewares.Wrapper(controllers.NotFoundHandler)  )
 
     fmt.Println("Started") // Вывод: Иван Иванов
 

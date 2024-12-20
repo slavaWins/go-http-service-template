@@ -30,7 +30,7 @@ main.go для запуска приложения
 
 
 Демо роут будет находится по юрл
- http://localhost:8080/api/template-service/v1/template
+ http://localhost:8080/v1/template
 
 ## Документация по фреймворку
 
