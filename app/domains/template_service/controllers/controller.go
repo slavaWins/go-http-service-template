@@ -8,9 +8,7 @@ import (
 )
 
 
-func TemplateGetHandler(r *http.Request) contracts.Response[models.Template] {
-
-
+func TemplateGetHandler(r *http.Request) contracts.Response[*models.Template] {
 
    newProduct := models.Template{
     	FirstName: "Tom",
@@ -19,13 +17,11 @@ func TemplateGetHandler(r *http.Request) contracts.Response[models.Template] {
 
     result := db_service.Connect().Create(&newProduct)
       if result.Error != nil {
-            return contracts.ShortErrorGeneric[models.Template]("Error create data: ");
+            return contracts.ShortErrorGeneric[*models.Template]("Error create data: ");
       }
 
 
-    response := contracts.Response[models.Template]{Value: newProduct}
+    response := contracts.Response[*models.Template]{Value: &newProduct}
 
    return response;
 }
-
-

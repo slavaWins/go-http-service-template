@@ -7,7 +7,7 @@ import (
 
 // Response структура для JSON-ответов
 type Response[T any] struct {
-    Value T
+    Value T `json:"Value,omitempty"`
     Error *string `json:"Error,omitempty"`
     Status int
 }
@@ -20,5 +20,5 @@ func ShortError(msg string ) Response[string]{
 }
 
 func ShortErrorGeneric [T any](msg string) Response[T] {
-    return Response[T]{Error: &msg, Status: 500}
+    return Response[T]{Error: &msg, Status: 500 }
 }
