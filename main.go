@@ -3,6 +3,7 @@ package main
 import (
     "demo/app/controllers"
     "demo/commons/middlewares"
+    "demo/commons/helpers"
     "net/http"
     "fmt"
 )
@@ -15,10 +16,14 @@ type Response struct {
 
 func main() {
 
+    helpers.Init();
+
+
+    fmt.Println(helpers.Env("APP_NAME")) // Вывод: Иван Иванов
     fmt.Println("Routes init") // Вывод: Иван Иванов
 
    // http.HandleFunc("/", controllers.IndexHandler)
-    http.HandleFunc("/", middlewares.Wrapper(controllers.Index))
+   // http.HandleFunc("/", middlewares.Wrapper(controllers.Index))
     http.HandleFunc("/user", middlewares.Wrapper(controllers.IndexHandlerResult))
 
 
