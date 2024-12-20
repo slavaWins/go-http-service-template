@@ -1,7 +1,7 @@
 package middlewares
 
 import (
-    "demo/commons/contracts"
+    "demo/pkg/contracts"
     "encoding/json"
     "net/http"
 )

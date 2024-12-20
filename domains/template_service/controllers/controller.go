@@ -1,9 +1,9 @@
 package controllers
 
 import (
-    "demo/commons/contracts"
+    "demo/pkg/contracts"
     "net/http"
-    "demo/commons/db_service"
+    "demo/pkg/db_service"
     "demo/domains/template_service/models"
 )
 

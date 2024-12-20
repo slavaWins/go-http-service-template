@@ -1,8 +1,8 @@
 package controllers
 
 import (
-    "demo/commons/contracts"
-    "demo/commons/helpers"
+    "demo/pkg/contracts"
+    "demo/pkg/helpers"
     "net/http"
 )
 

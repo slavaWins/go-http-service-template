@@ -4,7 +4,7 @@ import (
 
 	"fmt"
     "demo/app/models"
-    "demo/commons/db_service"
+    "demo/pkg/db_service"
 
 )
 

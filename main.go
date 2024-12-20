@@ -1,8 +1,8 @@
 package main
 
 import (
-    "demo/commons/db_service"
-    "demo/commons/helpers"
+    "demo/pkg/db_service"
+    "demo/pkg/helpers"
     "demo/domains/template_service"
     "net/http"
     "fmt"

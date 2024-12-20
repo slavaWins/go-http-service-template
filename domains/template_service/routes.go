@@ -2,8 +2,8 @@ package template_service
 
 import (
     "net/http"
-    "demo/commons/middlewares"
-    "demo/commons/db_service"
+    "demo/pkg/middlewares"
+    "demo/pkg/db_service"
     "fmt"
     "demo/domains/template_service/models"
     "demo/domains/template_service/controllers"
