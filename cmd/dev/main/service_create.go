@@ -25,7 +25,7 @@ func main() {
 	serviceName := os.Args[1]
 
 	projectRoot := "../../../"
-	domainsPath := filepath.Join(projectRoot, "domains")
+	domainsPath := filepath.Join(projectRoot,  "/app/domains")
 	templateService := filepath.Join(domainsPath, "template_service")
 	userService := filepath.Join(domainsPath, serviceName+"_service")
 

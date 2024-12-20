@@ -4,11 +4,12 @@ import (
     "demo/pkg/contracts"
     "net/http"
     "demo/pkg/db_service"
-    "demo/domains/template_service/models"
+    "demo/app/domains/template_service/models"
 )
 
 
 func TemplateGetHandler(r *http.Request) contracts.Response[models.Template] {
+
 
 
    newProduct := models.Template{
@@ -26,3 +27,5 @@ func TemplateGetHandler(r *http.Request) contracts.Response[models.Template] {
 
    return response;
 }
+
+

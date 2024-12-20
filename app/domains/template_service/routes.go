@@ -5,8 +5,8 @@ import (
     "demo/pkg/middlewares"
     "demo/pkg/db_service"
     "fmt"
-    "demo/domains/template_service/models"
-    "demo/domains/template_service/controllers"
+    "demo/app/domains/template_service/models"
+    "demo/app/domains/template_service/controllers"
 )
 
 
